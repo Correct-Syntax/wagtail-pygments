@@ -6,7 +6,7 @@ with open('README.rst', 'r') as fh:
 
 setuptools.setup(
     name='wagtail-pygments',
-    version='0.1',
+    version='0.1.1',
     description='A block render syntax highlighter for Wagtail CMS.',
     long_description=long_description,
     url='https://github.com/truongvan/wagtail-pygments.git',

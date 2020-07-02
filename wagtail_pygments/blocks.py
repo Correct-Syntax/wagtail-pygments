@@ -16,19 +16,13 @@ from .settings import get_language_choices
 class CodeStructValue(StructValue):
     def code(self):
         language = self.get("language")
-        caption = self.get("caption")
         src = self.get("src")
-        # src = code.strip('\n')
-        
         lexer = get_lexer_by_name(language)
         formatter = get_formatter_by_name(
             'html',
             linenos=None,
         )
         render_content = highlight(src, lexer, formatter)
-        if caption:
-            caption_content = f'<div class="code-caption">{caption}</div>\n'
-            render_content = caption_content + render_content
         return mark_safe(render_content)
 
 

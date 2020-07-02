@@ -1,5 +1,8 @@
 Wagtail Pygments Block
 ======================
+.. image:: https://badge.fury.io/py/wagtail-pygments.svg 
+    :target: https://badge.fury.io/py/wagtail-pygments
+    
 A block render syntax highlighter for Wagtail CMS.
 
 Install
@@ -40,6 +43,12 @@ Example Usage
     {% for block in page.body %}
     {% if block.block_type == "code" %}
         {{ block.value.code }}
+        {% if block.value.caption %}
+            <!-- Caption -->
+            <figcaption>
+              {{ block.value.caption }}
+            </figcaption>
+        {% endif %}
     {% else %}
         {{ block.value }}
     {% endif %}
